@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>AdminLTE Acordeón Funcional</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+<style>
+  .sidebar, .main-sidebar {
+    display: none;
+  }
+  body.logged-in .sidebar,
+  body.logged-in .main-sidebar {
+    display: block;
+  }
+</style>
+<style>
+
+  .sidebar, .main-sidebar {
+    display: none;
+  }
+  body.logged-in .sidebar,
+  body.logged-in .main-sidebar {
+    display: block;
+  }
+</style>
+<style>
+ 
+  .main-sidebar, .sidebar {
+    display: none !important;
+  }
+  body.logged-in .main-sidebar,
+  body.logged-in .sidebar {
+    display: block !important;
+  }
+  
+ 
+</style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<!-- Botón colapsar menú -->
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+</li>
+<li class="nav-item d-none d-sm-inline-block">
+<a class="nav-link" href="#">Inicio</a>
+</li>
+</ul>
+<!-- Menú derecho -->
+<ul class="navbar-nav ml-auto">
+<!-- Icono de mensajes -->
+<li class="nav-item dropdown">
+<a class="nav-link" data-toggle="dropdown" href="#">
+<i class="far fa-comments"></i>
+</a>
+<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+<span class="dropdown-item">Sin mensajes</span>
+</div>
+</li>
+<!-- Icono de usuario/login -->
+<li class="nav-item dropdown" id="user-menu">
+<a class="nav-link user-login" href="#"><i class="far fa-user"></i> Iniciar sesión</a>
+</li>
+</ul>
+</nav>
+<!-- Sidebar -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<a class="brand-link" href="#">
+<span class="brand-text font-weight-light">Mi WebApp</span>
+</a>
+<div class="sidebar">
+<nav class="mt-2">
+<ul class="nav nav-pills nav-sidebar flex-column" data-accordion="false" data-widget="treeview" role="menu">
+<li class="nav-item">
+<a class="nav-link" data-page="articulos" href="#">
+<i class="nav-icon fas fa-box"></i>
+<p>Artículos</p>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-page="clientes" href="#">
+<i class="nav-icon fas fa-users"></i>
+<p>Clientes</p>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-page="usuarios" href="#">
+<i class="nav-icon fas fa-user"></i>
+<p>Usuarios</p>
+</a>
+</li>
+<!-- Menu2 con submenús -->
+<li class="nav-item has-treeview">
+<a class="nav-link" href="#">
+<i class="nav-icon fas fa-bars"></i>
+<p>
+                Menu2
+                <i class="right fas fa-angle-left"></i>
+</p>
+</a>
+<ul class="nav nav-treeview">
+<li class="nav-item">
+<a class="nav-link" data-page="submenu1" href="#">
+<i class="far fa-circle nav-icon"></i>
+<p>Submenu 1</p>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-page="submenu2" href="#">
+<i class="far fa-circle nav-icon"></i>
+<p>Submenu 2</p>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-page="submenu3" href="#">
+<i class="far fa-circle nav-icon"></i>
+<p>Submenu 3</p>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<!-- Content -->
+<div class="content-wrapper p-3">
+<div id="content-area">
+
+<img alt="Bienvenida" class="mb-4" src="https://via.placeholder.com/200x200.png?text=Bienvenido" style="max-width: 200px;"/>
+<h2>Bienvenido a la WebApp</h2>
+<p class="lead">Por favor, inicia sesión para acceder al panel de administración.</p>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+<script src="js/main.js"></script>
+<!-- Login Modal -->
+<div aria-hidden="true" aria-labelledby="loginModalLabel" class="modal fade" id="loginModal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+<button aria-label="Cerrar" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<form id="login-form">
+<div class="form-group">
+<label for="username">Usuario</label>
+<input class="form-control" id="username" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="password">Contraseña</label>
+<input class="form-control" id="password" required="" type="password"/>
+</div>
+<button class="btn btn-primary" type="submit">Ingresar</button>
+</form>
+<div class="text-danger mt-2" id="login-error" style="display: none;">Usuario o contraseña inválidos.</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

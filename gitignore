@@ -1,0 +1,45 @@
+
+# ---- Python (backend) ----
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.dist-info/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python-version
+
+# Local DBs (old SQLite)
+*.db
+
+# Env & secrets
+.env
+.env.*
+*.key
+*.pem
+
+# ---- Node/Frontend (just in case) ----
+node_modules/
+dist/
+build/
+*.map
+.sass-cache/
+.parcel-cache/
+coverage/
+*.log
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ---- Misc ----
+# compiled assets / cache
+*.cache

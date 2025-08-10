@@ -1,0 +1,56 @@
+Pasos para adaptarlo (en tu equipo local)
+
+
+1. Entra en la carpeta de tu backend actual
+Supongamos que tu proyecto está en:
+
+C:\datos-fran\admin-lte\webapp_v1\frontend_template\backend
+Ábrelo en terminal:
+
+C:\datos-fran\admin-lte\webapp_v1\frontend_template\backend
+
+2. Crea el entorno virtual
+python -m venv venv
+
+Esto crea una carpeta venv/ con su propio Python aislado.
+
+3. Activa el entorno virtual
+Windows:
+venv\Scripts\activate
+
+Verás que ahora el terminal cambia y muestra algo como:
+
+
+(venv) C:\Users\fran\mis_proyectos\webapp\backend>
+
+
+4. Instala las dependencias necesarias
+Ya que vas a usar PostgreSQL, JWT, bcrypt, etc.:
+
+
+pip install fastapi uvicorn sqlalchemy psycopg2-binary passlib[bcrypt] python-jose
+
+
+5. Guarda tus dependencias
+Esto te permitirá replicar tu backend en otros entornos fácilmente:
+
+
+pip freeze > requirements.txt
+
+6. (Opcional) Crea script de arranque
+Archivo run.bat (Windows):
+
+
+@echo off
+call venv\Scripts\activate.bat
+uvicorn main:app --reload
+Archivo run.sh (Linux/macOS):
+
+Guarda estos archivos en la raíz del backend. Luego solo tienes que ejecutar run.bat (doble clic) o ./run.sh.
+dale desde navegador: http://127.0.0.1:8000
+
+¿Qué necesitas hacer ahora?
+Si ya tienes tu carpeta backend montada y funcionando (aunque sin venv), haz los pasos 2 a 6 dentro de esa carpeta y ya estará todo bajo entorno virtual.
+
+¿Quieres que revise tu carpeta backend y te la reestructure para que ya incluya venv/, requirements.txt, y los scripts listos?
+Si es así, súbeme tu backend actual (como ZIP) y lo ajusto todo.
