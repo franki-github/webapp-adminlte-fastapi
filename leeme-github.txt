@@ -1,0 +1,24 @@
+crear repo en github, no poner readme, no es necesario todavia.
+fichero .gitignore añadimos lo que no es necesario clonar:
+  venv   etc.etc.
+
+en ms-dos:
+
+si quiero subir lo que tengo hecho, situarme en raiz del proyecto
+
+git init
+
+git remote add origin https://github.com/franki-github/webapp-adminlte-fastapi.git
+
+
+verificamos:
+git remote -v
+
+
+añado codigo y confirmo:
+git add .
+git commit -m "Versión inicial de la webapp"
+
+subo codigo a github:
+git branch -M main
+git push -u origin main
